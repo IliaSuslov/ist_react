@@ -10,7 +10,16 @@
     "lint": "eslint 'src/**/*.{ts,tsx,js,jsx}'",
     "lint-format": "pnpm run lint && pnpm run format",
     "preview": "vite preview",
+    "precommit": "lint-staged",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx,css,scss}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add" 
+    ],
+    "tailwind.config.js": ["prettier --write"]
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
@@ -44,6 +53,7 @@
     "eslint-plugin-react-refresh": "^0.4.8",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
     "postcss": "^8.4.49",
     "prettier": "3.4.2",
     "prettier-plugin-packagejson": "^2.5.6",
