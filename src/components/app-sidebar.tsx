@@ -1,4 +1,4 @@
-import { Home, Contact } from 'lucide-react';
+import { Home, Contact, Award } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -9,9 +9,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
-
+import { Link } from '@tanstack/react-router';
 import { ModeToggle } from './mode-toggle';
-import { NavLink } from 'react-router';
 
 const items = [
   {
@@ -24,6 +23,11 @@ const items = [
     url: '/contacts',
     icon: <Contact />,
   },
+  {
+    title: 'Items',
+    url: '/items',
+    icon: <Award />,
+  },
 ];
 
 export function AppSidebar() {
@@ -32,13 +36,13 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="flex justify-between">
-            IS Template
+            ISR Template
             <ModeToggle />
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <NavLink key={item.title} to={item.url}>
+                <Link key={item.title} to={item.url}>
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
                       <div>
@@ -46,7 +50,7 @@ export function AppSidebar() {
                       </div>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                </NavLink>
+                </Link>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>

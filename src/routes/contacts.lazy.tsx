@@ -1,7 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { createLazyFileRoute } from '@tanstack/react-router';
 
-export default function Contacts() {
+export const Route = createLazyFileRoute('/contacts')({
+  component: RouteComponent,
+});
+
+function RouteComponent() {
   const { toast } = useToast();
 
   return (
