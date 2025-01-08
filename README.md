@@ -1,4 +1,5 @@
-# React + TypeScript + Vite 
+# IS React Template
+## React + TypeScript + Vite 
 
 - PNPM
 
