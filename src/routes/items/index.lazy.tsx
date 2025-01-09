@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { createLazyFileRoute, Link } from '@tanstack/react-router';
 
 export const Route = createLazyFileRoute('/items/')({
@@ -7,7 +8,9 @@ export const Route = createLazyFileRoute('/items/')({
 function RouteComponent() {
   return (
     <div>
-      <Link to="/items/1">to 1 item</Link>
+      <Link to="/items/1">
+        <Button>to 1 item</Button>
+      </Link>
     </div>
   );
 }
