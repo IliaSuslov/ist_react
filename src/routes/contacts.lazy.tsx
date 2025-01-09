@@ -16,8 +16,8 @@ function RouteComponent() {
         <Button
           onClick={() => {
             toast({
-              title: 'Test Toast',
-              description: 'Toast подключен',
+              title: 'Contact Me',
+              description: 'tg: @iliasuslov',
             });
           }}
         >
